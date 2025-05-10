@@ -1,23 +1,70 @@
-h1 {
-    color: red;
+.container{
+    display:grid;
+    grid-template-areas:
+    "Header Header"
+    "Nav Nav"
+    "Section Sidebar"
+    "Footer Footer";
+    grid-template-columns: 3fr 1fr;
+
 }
-p {
-    color:blue;
+
+/*.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    min-height: 100vh;
+}*/
+.Header{
+    background: lightseagreen;
+    grid-area: Header ;
+    padding: 1rem;
 }
-.titulos{
-    color:brown;
+.Nav{
+    background: lightcoral;
+    grid-area: Nav ;
+    padding: 1rem;
 }
-#segundoParrafo{
-    color:aqua;
+.Section{
+    background: lightslategray;
+    grid-area: Section;
+    padding: 1rem;
 }
-#Holasoyeldeivis{
-    color:chocolate
+.Sidebar{
+    background: lightskyblue;
+    grid-area: Sidebar ;
+    padding: 1rem;
 }
-.caja{
-    border: 5px solid black;
-    margin: 30px;
-    padding: 10;
+.Footer{
+    background: lightgoldenrodyellow;
+    grid-area: Footer ;
+    padding: 1rem;
 }
-.contenido{
-    border: 5px solid black;
+.Nav ul{
+    display: grid;
+    grid-auto-flow: column;
+    list-style: none;
+    padding: 1rem;
+    gap: 1rem;
 }
+@media(max-width: 1023px){
+    .container{
+        grid-template-areas:
+        "Header"
+        "Nav"
+        "Section" 
+        "Sidebar"
+        "Footer";
+        grid-template-columns: 1fr;
+    }
+.Nav ul{
+    grid-auto-flow: row;
+}
+    }
+
+@media(max-width: 767px){
+    .Sidebar{
+        display: none;
+    }
+}
+
