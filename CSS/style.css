@@ -47,4 +47,24 @@
     padding: 1rem;
     gap: 1rem;
 }
+@media(max-width: 1023px){
+    .container{
+        grid-template-areas:
+        "Header"
+        "Nav"
+        "Section" 
+        "Sidebar"
+        "Footer";
+        grid-template-columns: 1fr;
+    }
+.Nav ul{
+    grid-auto-flow: row;
+}
+    }
+
+@media(max-width: 767px){
+    .Sidebar{
+        display: none;
+    }
+}
 
